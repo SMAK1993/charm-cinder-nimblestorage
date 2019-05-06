@@ -41,7 +41,13 @@ class CinderNimbleStorageTest(test_utils.OpenStackBaseTest):
         expected_contents = {
             'cinder-nimblestorage': {
                 'iscsi_helper': ['tgtadm'],
-                'volume_dd_blocksize': ['512']}}
+                'volume_dd_blocksize': ['512'],
+                'volume_driver':
+                ['cinder.volume.drivers.nimble.NimbleISCSIDriver'],
+                'volume_backend_name': ['nimble-storage-iscsi'],
+                'san_ip': ['10.11.12.13'],
+                'san_login': ['admin'],
+                'san_password': ['admin']}}
 
         zaza.model.run_on_leader(
             'cinder',

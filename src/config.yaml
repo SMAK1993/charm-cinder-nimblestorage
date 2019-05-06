@@ -1,1 +1,21 @@
 options:
+  san-ip:
+    type: string
+    description: "Management IP address of Nimble Storage array/group."
+    default:
+  san-login:
+    type: string
+    description: "Nimble Storage account login with minimum power user (admin) privilege if RBAC is used."
+    default:
+  san-password:
+    type: string
+    description: "Password of the admin account for nimble array."
+    default:
+  volume-driver:
+    type: string
+    description: "Use either 'iscsi' for iSCSI or 'fc' for Fibre Channel."
+    default: iscsi
+  volume-backend-name:
+    type: string
+    description: "A volume back-end name which is specified in the cinder.conf file. This is also used while assigning a back-end name to the Nimble volume type."
+    default:

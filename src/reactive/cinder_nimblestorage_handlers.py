@@ -29,5 +29,5 @@ charms_openstack.charm.use_defaults(
 
 @charms.reactive.when('config.changed.driver-source')
 def reinstall():
-    with charms_openstack.charm.provide_charm_instance() as charm:
-        charm.install()
+    with charms_openstack.charm.provide_charm_instance() as nimblestorage:
+        nimblestorage.install()

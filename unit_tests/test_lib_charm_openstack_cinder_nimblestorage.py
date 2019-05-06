@@ -43,7 +43,18 @@ class TestCinderNimbleStorageCharm(test_utils.PatchHelper):
         self.assertEqual(charm.packages, ['python-cinder-nimble-storage'])
 
     def test_cinder_configuration(self):
-        charm = self._patch_config_and_charm({'a': 'b'})
+        charm = self._patch_config_and_charm({
+            'volume-driver': 'iscsi',
+            'volume-backend-name': 'nimble-storage-iscsi',
+            'san-ip': '10.11.12.13',
+            'san-login': 'admin',
+            'san-password': 'admin'})
         config = charm.cinder_configuration()  # noqa
         # Add check here that configuration is as expected.
-        # self.assertEqual(config, {})
+        self.assertEqual(config, [
+            ('volume_driver',
+             'cinder.volume.drivers.nimble.NimbleISCSIDriver'),
+            ('volume_backend_name', 'nimble-storage-iscsi'),
+            ('san_ip', '10.11.12.13'),
+            ('san_login', 'admin'),
+            ('san_password', 'admin')])
