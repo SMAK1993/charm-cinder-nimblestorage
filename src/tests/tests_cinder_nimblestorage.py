@@ -40,8 +40,6 @@ class CinderNimbleStorageTest(test_utils.OpenStackBaseTest):
         logging.info('nimblestorage')
         expected_contents = {
             'cinder-nimblestorage': {
-                'iscsi_helper': ['tgtadm'],
-                'volume_dd_blocksize': ['512'],
                 'volume_driver':
                 ['cinder.volume.drivers.nimble.NimbleISCSIDriver'],
                 'volume_backend_name': ['nimble-storage-iscsi'],

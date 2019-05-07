@@ -39,8 +39,8 @@ class TestCinderNimbleStorageCharm(test_utils.PatchHelper):
     def test_cinder_base(self):
         charm = self._patch_config_and_charm({})
         self.assertEqual(charm.name, 'cinder_nimblestorage')
-        self.assertEqual(charm.version_package, 'python-cinder-nimble-storage')
-        self.assertEqual(charm.packages, ['python-cinder-nimble-storage'])
+        self.assertEqual(charm.version_package, '')
+        self.assertEqual(charm.packages, [''])
 
     def test_cinder_configuration(self):
         charm = self._patch_config_and_charm({
