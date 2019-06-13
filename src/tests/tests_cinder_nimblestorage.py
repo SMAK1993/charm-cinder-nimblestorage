@@ -45,7 +45,8 @@ class CinderNimbleStorageTest(test_utils.OpenStackBaseTest):
                 'volume_backend_name': ['nimble-storage-iscsi'],
                 'san_ip': ['10.11.12.13'],
                 'san_login': ['admin'],
-                'san_password': ['admin']}}
+                'san_password': ['admin'],
+                'use_multipath_for_image_xfer': [True]}}
 
         zaza.model.run_on_leader(
             'cinder',

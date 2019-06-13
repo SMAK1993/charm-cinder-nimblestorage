@@ -19,3 +19,7 @@ options:
     type: string
     description: "A volume back-end name which is specified in the cinder.conf file. This is also used while assigning a back-end name to the Nimble volume type."
     default:
+  use-multipath-for-image-xfer:
+    type: boolean
+    description: "Enables or disables the use of multipathing."
+    default: True

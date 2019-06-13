@@ -28,6 +28,8 @@ class CinderNimbleStorageCharm(
             ('san_ip', self.config.get('san-ip')),
             ('san_login', self.config.get('san-login')),
             ('san_password', self.config.get('san-password')),
+            ('use_multipath_for_image_xfer',
+             self.config.get('use-multipath-for-image-xfer'))
         ]
         return driver_options
 

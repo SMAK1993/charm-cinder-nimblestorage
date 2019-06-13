@@ -48,7 +48,8 @@ class TestCinderNimbleStorageCharm(test_utils.PatchHelper):
             'volume-backend-name': 'nimble-storage-iscsi',
             'san-ip': '10.11.12.13',
             'san-login': 'admin',
-            'san-password': 'admin'})
+            'san-password': 'admin',
+            'use-multipath-for-image-xfer': True})
         config = charm.cinder_configuration()  # noqa
         # Add check here that configuration is as expected.
         self.assertEqual(config, [
@@ -57,4 +58,5 @@ class TestCinderNimbleStorageCharm(test_utils.PatchHelper):
             ('volume_backend_name', 'nimble-storage-iscsi'),
             ('san_ip', '10.11.12.13'),
             ('san_login', 'admin'),
-            ('san_password', 'admin')])
+            ('san_password', 'admin'),
+            ('use_multipath_for_image_xfer', True)])
