@@ -46,7 +46,14 @@ class CinderNimbleStorageTest(test_utils.OpenStackBaseTest):
                 'san_ip': ['10.11.12.13'],
                 'san_login': ['admin'],
                 'san_password': ['admin'],
-                'use_multipath_for_image_xfer': [True]}}
+                'use_multipath_for_image_xfer': [True],
+                'nimble:encryption': ['yes'],
+                'nimble:perfpol-name': ['test-performance-policy'],
+                'nimble:multi-initiator': [True],
+                'nimble_pool_name': ['default'],
+                'nimble_subnet_label': ['*'],
+                'nimble_verify_cert_path': ['None'],
+                'nimble_verify_certificate': ['False']}}
 
         zaza.model.run_on_leader(
             'cinder',

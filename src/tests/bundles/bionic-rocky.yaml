@@ -42,11 +42,19 @@ applications:
     series: bionic
     charm: cinder-nimblestorage
     options:
-            volume-driver: 'iscsi'
-            volume-backend-name: 'nimble-storage-iscsi'
-            san-ip: '10.11.12.13'
-            san-login: 'admin'
-            san-password: 'admin'
+      volume-driver: 'iscsi'
+      volume-backend-name: 'nimble-storage-iscsi'
+      san-ip: '10.11.12.13'
+      san-login: 'admin'
+      san-password: 'admin'
+      use-multipath-for-image-xfer: True
+      encryption: 'yes'
+      performance-policy-name: 'test-performance-policy'
+      multi-initiator: True
+      pool-name: 'default'
+      subnet-label: '*'
+      verify-cert-path: 'None'
+      verify-cert: 'False'
 # Add config options here
   rabbitmq-server:
     charm: cs:~openstack-charmers-next/rabbitmq-server

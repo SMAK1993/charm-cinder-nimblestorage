@@ -29,7 +29,15 @@ class CinderNimbleStorageCharm(
             ('san_login', self.config.get('san-login')),
             ('san_password', self.config.get('san-password')),
             ('use_multipath_for_image_xfer',
-             self.config.get('use-multipath-for-image-xfer'))
+             self.config.get('use-multipath-for-image-xfer')),
+            ('nimble:encryption', self.config.get('encryption')),
+            ('nimble:perfpol-name',
+             self.config.get('performance-policy-name')),
+            ('nimble:multi-initiator', self.config.get('multi-initiator')),
+            ('nimble_pool_name', self.config.get('pool-name')),
+            ('nimble_subnet_label', self.config.get('subnet-label')),
+            ('nimble_verify_cert_path', self.config.get('verify-cert-path')),
+            ('nimble_verify_certificate', self.config.get('verify-cert'))
         ]
         return driver_options
 

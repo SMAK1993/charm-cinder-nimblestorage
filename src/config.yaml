@@ -23,3 +23,31 @@ options:
     type: boolean
     description: "Enables or disables the use of multipathing."
     default: True
+  encryption:
+    type: string
+    description: "Used to enable encryption for a volume-type. Either 'yes' or 'no'."
+    default:
+  performance-policy-name:
+    type: string
+    description: "The name of a performance policy which exists on the Nimble array and should be enabled for every volume in a volume type."
+    default:
+  multi-initiator:
+    type: boolean
+    description: "Used to enable multi-initiator access for a volume-type."
+    default: True
+  pool-name:
+    type: string
+    description: "Nimble Controller pool name"
+    default: "default"
+  subnet-label:
+    type: string
+    description: "Nimble Subnet Label"
+    default: "*"
+  verify-cert-path:
+    type: string
+    description: "Path to Nimble Array SSL certificate"
+    default: "None"
+  verify-cert:
+    type: string
+    description: "Whether to verify Nimble SSL Certificate"
+    default: "False"
